@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				background-color: deepskyblue;
+			}
+			.wrap{
+				width: 300px;
+				height: 300px;
+				/*border: 1px solid #000000;*/
+				margin: 50px auto;
+				position: relative;
+				/*给父盒子设置透视*/
+				perspective: 400px;
+			}
+			.wrap::before,.wrap::after{
+				content: "";
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+				background-color: red;
+				background: url(image/musicb.jpg) no-repeat;
+			}
+			.wrap::after{
+				left: 0px;;
+				/*top: 300px;*/
+				background: url(image/musict.jpg) no-repeat;
+				/*设置过渡*/
+				transition: all 1s;
+				/*改变中心*/
+				transform-origin: bottom;
+			}
+			
+			.wrap:hover::after{
+				transform: rotateX(-180deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap"></div>
+	</body>
+</html>

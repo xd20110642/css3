@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+				margin-top: 20px;
+			}
+			.box2,.box3{
+				border: 25px solid blue;
+				padding: 25px;
+				/*设置的放内容区域大小*/
+				/*外加模式*/
+				box-sizing: content-box;
+			}
+			.box2{
+				/*设置的盒子模型中最大盒子的大小  如果在加padding border只会减小放内容的区域*/
+				/*内减模式*/
+				box-sizing: border-box;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1"></div>
+		<div class="box2"></div>
+		<div class="box3"></div>
+	</body>
+</html>

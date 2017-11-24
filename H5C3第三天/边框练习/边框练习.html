@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			.wrap{
+				width:1000px;
+				margin: 100px auto;				
+			}
+			.box{
+				width: 225px;
+				height: 250px;
+				float: left;
+				background-color: #ccc;
+				margin-right: 20px;
+				position: relative;
+				box-shadow: 3px 3px 3px 3px #CCCCCC;
+			}
+			/*让box盒子下面的img标签 的宽度自适应父盒子宽度  高度为113px*/
+			.box>img{
+				/*图片的宽度自适应父盒子*/
+				width: 100%;
+				height:113px;
+			}
+			.box a{
+				position: absolute;
+				width: 80px;
+				height: 80px;
+				border-radius: 50%;
+				border: 4px solid #fff;
+				overflow: hidden;
+				top: 73px;
+				/*偏移在中间的位置*/
+				left: 50%;
+				margin-left: -44px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="box">
+				<img src="images/item_1.jpg"/>
+				<a href="">
+					<img src="images/logo_1.jpg"/>
+				</a>
+			</div>
+			<div class="box">
+				<img src="images/item_3.jpg"/>
+				<a href="">
+					<img src="images/logo_3.jpg"/>
+				</a>
+			</div>
+			<div class="box">
+				<img src="images/item_4.jpg"/>
+				<a href="">
+					<img src="images/logo_4.jpg"/>
+				</a>
+			</div>
+			<div class="box">
+				<img src="images/item_5.jpg"/>
+				<a href="">
+					<img src="images/logo_5.jpg"/>
+				</a>
+			</div>
+		</div>
+	</body>
+</html>

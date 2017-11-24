@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 200px;
+				height: 200px;
+				border: 1px solid #000000;
+				margin: 100px auto;
+				/*过渡的属性详解*/
+				/*过渡属性*/
+				/*如果希望所有的属性都发生过渡 用all*/
+				/*transition-property: width;*/
+				/*过渡时间*/
+				/*transition-duration: 4s;*/
+				/*运动曲线*/
+				/*linear 匀速  ease 减速   ease-in 加速  ease-in-out 先先加速后减速*/
+				/*transition-timing-function:ease-in-out ;*/
+				/*过渡延迟*/
+				/*transition-delay: 1s;*/*/*/
+				
+				/*简写*/
+				transition: width 4s ease-in-out; accelerator: s; 
+			
+			}
+			.box:hover{
+				width: 600px ;
+				background-color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+	</body>
+</html>

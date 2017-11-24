@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 300px;
+				height: 100px;
+				margin: 100px auto;				
+				border-radius: 10px;
+				background: url(paopao.png) no-repeat left top,url(paopao.png) no-repeat right bottom;
+				background-color: blue;
+				/*添加过渡  过渡只能放在盒子里面*/
+				transition: all 3s; 
+			}
+			
+			.box:hover{
+				background-position: left bottom,right top;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+	</body>
+</html>

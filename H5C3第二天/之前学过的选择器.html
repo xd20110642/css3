@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*
+			 		之前学过的选择器
+			 		div{} 标签选择器
+			 		#box id选择器
+			 		.box  类名选择器
+			 		div p后代选择器
+			 		div.box 交集指定选择器 首先是div然后有一个类名是box 满足2个条件
+			 		div,p,span并集选择器 下面的都是满足一样的 就是可以设置共同的属性
+			 		div>p  子代选择器  div下面的p标签
+					div+p:选中div后面的第一个p
+					div~p:选中div后面所以的p
+			
+			
+			
+			
+			 */
+			/*这个是选中div下面紧跟的第一个p  这个之间不能隔断  隔断了 那么就不能成立*/
+			div+p{
+				background-color: red;
+			}
+			/*div后面所有的p*/
+			div~p{
+				background-color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div>hasdhha</div>
+		<span>span</span>
+		<p>1213221231</p>
+		<p>1213221231</p>
+		<p>1213221231</p>
+		<span>span</span>
+		<p>1213221231</p>
+		<p>1213221231</p>
+	</body>
+</html>

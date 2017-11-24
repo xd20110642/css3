@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="" method="post">
+			<fieldset id="">
+				<legend>表单事件</legend>
+				<lable>
+					用户名：<input type="email" id="txt1"/>
+				</lable>
+				
+				<lable>
+					密码：<input type="text" id="txt2"/>
+				</lable>
+				
+				<input type="submit" value=""/>
+			</fieldset>
+			
+		</form>
+		<script type="text/javascript">
+			//表单事件：oninput 当用户输入的时候 没输入一次就统计一次
+			
+			var txt1=document.getElementById("txt1");
+			var txt2=document.getElementById("txt2");
+			var num=0;
+			txt1.oninput=function(){
+				num++;
+				//将数字显示在TXT2中
+				txt2.value=num;
+			}
+			//oninvalid 当验证不通过时触发
+			//用于设置验证不通过时的提示文字
+			txt1.oninvalid=function(){
+				this.setCustomValidity('132')
+			}
+		</script>
+	</body>
+</html>

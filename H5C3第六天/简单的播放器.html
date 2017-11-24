@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload=function(){
+				//.querySelector 是会获取指定元素的第一个
+				document.querySelector("button:nth-of-type(1)").onclick=function(){
+					//播放  video的属性.play()  
+				document.querySelector("video").play();
+				}
+				//获取暂停的按钮
+				document.querySelector("button:nth-of-type(2)").onclick=function(){
+					//暂停属性 .pause()
+				document.querySelector("video").pause();
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<video width="800" height="" controls="controls">
+			<source src="video/fun.mp4" type="video/mp4"></source>
+			<source src="video/fun.ogv" type="video/ogg"></source>
+			<source src="video/fun.webm" type="video/webm"></source>
+			<object width="" height="" type="application/x-shockwave-flash" data="video/fun.swf">
+				<param name="movie" value=video/fun.swf" />
+				<param name="flashvars" value="autostart=true&amp;file=video/fun.swf" />
+			</object>
+			当前浏览器不支持 video直接播放，点击这里下载视频： <a href="video/fun.webm">下载视频</a>
+		</video>
+		<button>播放</button>
+		<button>暂停</button>
+	</body>
+</html>

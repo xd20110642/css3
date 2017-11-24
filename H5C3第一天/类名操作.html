@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 100px;
+				height: 100px;
+				margin: 10px auto;
+				border: 1px solid #000000;
+			}
+			.active {
+				/*这个是圆角的程度*/
+				border-radius: 40%;
+				background-color: pink;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box box1"></div>
+		<div class="box box2"></div>
+		<div class="box box3"></div>
+		<div class="box box4"></div>
+		<div class="box box5"></div>
+		<button>切换</button>
+	</body>
+	<script	 type="text/javascript">
+		
+		//jquery
+		//addClass() removeClass() hasClass()   
+		//这个是切换   如果有那么就变没有  没有那么就变有toggleClass()
+		//H5新增的操作类名的方式和jq一样好用
+		var box1=document.querySelector(".box1");
+		//添加类名
+		box1.classList.add("active");
+		//删除类名
+		//box1.classList.remove("active");
+		//判断类名 contains包含  返回值为布尔类型
+		
+		var f=box1.classList.contains("active")
+		console.log(f)
+		
+		//切换类名
+		document.querySelector("button").onclick=function(){
+			document.querySelector(".box3").classList.toggle("active");
+		}
+	</script>
+</html>

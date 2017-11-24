@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				/*透视效果必须加在 变化盒子的父盒子上*/
+				perspective: 500px;
+			}
+			.box{
+				width: 250px;
+				height: 250px;
+				background: green;
+				transition: all 1s; 
+				margin: 200px auto;
+			}
+			.box:hover{
+				/*translateZ必须配合透视来使用*/
+				transform: translateZ(400px);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+	</body>
+</html>

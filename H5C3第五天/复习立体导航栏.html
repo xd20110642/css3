@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				background-color: skyblue;
+				font-family: "微软雅黑";		
+			}
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			ul{
+				width: 900px;
+				margin: 100px auto;
+				position: relative;
+			}
+			li{
+				float: left;
+				width: 180px;
+				height: 80px;
+				background-color: #CCCCCC;
+			}
+			li span{
+				float: left;
+				height: 80px;
+				background-color: #CCCCCC;
+				
+			}
+			li .left{
+				width: 30px;
+				/*修改旋转中心*/
+				transform-origin: left;
+			}
+			li .right{
+				width: 30px;
+				/*修改旋转中心*/
+				transform-origin: right;
+			}
+			li .center{
+				width: 120px;
+				background-color: #CCCCCC;
+				text-align: center;
+				line-height: 80px;
+				
+				
+			}
+			li:hover .left{
+				/*这个是倾斜*/
+				transform:skew(0deg,-30deg) ;
+				text-shadow: 5px 5px 3px #333 ;
+				
+			}
+			li:hover .right{
+					/*这个是倾斜*/
+				transform:skew(0deg,30deg) ;
+				text-shadow: 5px 5px 3px #333 ;
+			
+			}
+			li:hover .center{
+				transform: translateY(-17px);
+				text-shadow: 5px 5px 3px #333 ;
+				
+			}
+			/*ul前后模拟*/
+			ul::before,ul::after{
+				content: "";
+				position: absolute;
+				width: 80px;
+				height: 80px;
+				background-color:#CCCCCC;
+				left:-80px ;
+				top: 0;	
+			}
+			ul::after{
+				left: auto;
+				right: -80px;
+				background-color: #CCCCCC;
+			}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>
+				<span class="left"></span>
+				<span class="center">传智博客</span>
+				<span class="right"></span>
+			</li>
+			
+			<li>
+				<span class="left"></span>
+				<span class="center">传智博客</span>
+				<span class="right"></span>
+			</li>
+			
+			<li>
+				<span class="left"></span>
+				<span class="center">传智博客</span>
+				<span class="right"></span>
+			</li>
+			
+			<li>
+				<span class="left"></span>
+				<span class="center">传智博客</span>
+				<span class="right"></span>
+			</li>
+			
+			<li>
+				<span class="left"></span>
+				<span class="center">传智博客</span>
+				<span class="right"></span>
+			</li>
+		</ul>
+	</body>
+</html>

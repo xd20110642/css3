@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 200px;
+				height: 200px;
+				background-color: pink;
+				border: 1px solid #000000;
+				margin: 100px auto;
+				/*整体设置圆角属性*/
+				/*border-radius: 50%;*/
+				/*单个属性  水平半径 垂直半径*/
+				/*border-top-left-radius: 60px 120px;*/
+				/*
+				 * 复合写法
+				 * border-radius:水平半径/垂直半径
+				 */
+				/*border-radius: 60px 60px 60px 60px/60px 60px 60px 60px;*/
+				
+				/*简化*/
+				border-radius: 60px/120px;
+			
+			
+				/*四个角的水平半径都是相同的*/
+				border-radius: 60px;
+			
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			
+		</div>
+	</body>
+</html>

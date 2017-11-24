@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="" id="" value="" />
+		<button>sessionStorage存储</button>
+		<button>sessionStorage获取</button>
+		<button>sessionStorage更新</button>
+		<button>sessionStorage删除</button>
+		<button>sessionStorage清除</button>
+		<script type="text/javascript">
+			//在H5里面提供了2种web存储方式
+			//第一种：sessionStorage 5M	会话存储   当窗口关闭时 数据销毁
+			//第二种：localStorage  20M  本地存储	 永久生效 除非手动删除 
+		var txt=document.querySelector("input");		
+		var btnArr=document.querySelectorAll("button");
+		//sessionStorage存储数据
+		btnArr[0].onclick=function(){
+			window.sessionStorage.setItem('userName',txt.value);
+		}
+		//sessionStorage获取数据
+		btnArr[1].onclick=function(){
+			txt.value=window.sessionStorage.getItem('userName');
+		}
+		//sessionStorage更新数据
+		btnArr[2].onclick=function(){
+			window.sessionStorage.setItem('userName',txt.value);
+		} 
+		//sessionStorage删除数据
+		btnArr[3].onclick=function(){
+			window.sessionStorage.removeItem('userName');
+		} 
+		//sessionStorage清空数据
+		btnArr[4].onclick=function(){
+			window.sessionStorage.clear();
+		} 
+		</script>
+	</body>
+</html>

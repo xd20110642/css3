@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.rotateX{
+				width: 300px;
+				height: 226px;
+				margin: 200px auto;				
+				/*透视 加给b变换的父盒子*/
+				/*设置的是用户的眼睛到屏幕的距离*/
+				/*效果只是视觉上的呈现 不是真正的3d*/
+				perspective: 200px;
+			}
+			img{
+				transition: all 1s;
+			}
+			.rotateX:hover img{
+				transform: rotateX(360deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="rotateX">
+			<img src="img/x.jpg"/>
+		</div>
+	</body>
+</html>

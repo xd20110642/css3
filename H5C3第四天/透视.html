@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.out{
+				width: 500px;
+				height: 500px;
+				border: 1px solid #000;
+				background-color: blue;
+				margin: 100px auto;
+				/*透视加给父盒子*/
+				/*透视设置的用户 眼睛和屏幕的距离 仅仅是视觉的3D而不是真正的3D*/
+				perspective: 600px;
+			}
+			.in{
+				width: 300px;
+				height: 300px;
+				background-color: red;
+				margin: 100px auto;
+				transition: all 1s;
+				}
+			.out:hover .in{
+				transform: translateX(200px) rotateY(120deg);
+			
+			}
+		</style>
+	</head>
+	<body>
+		<div class="out">
+			<div class="in"></div>
+		</div>
+	</body>
+</html>

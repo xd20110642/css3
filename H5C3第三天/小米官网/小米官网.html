@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;
+			padding: 0;}
+			body{
+				background-color: #EEEEEE;
+			}
+			.box{
+				width:1500px;
+				margin: 100px auto;
+			}
+			.box1{
+				float: left;
+				width: 234px;
+				height: 300px;
+				margin-right: 20px;
+				background-color: #FFFFFF;
+				text-align: center;
+				position: relative;
+				overflow: hidden;
+				transition: all 0.7s; 
+			}
+			/*添加影音效果*/
+			.box1:hover {
+				box-shadow:0 0 20px 2px #666 ;
+				/*盒子向上走*/
+				margin-top: -3px;
+			}
+			.box1 span{
+				position: absolute;
+				width: 100%;
+				height:80px ;
+				background-color: #f40;
+				left: 0;
+				bottom: -80px;
+				/*添加过渡属性*/
+				/*保证2个状态  1个起始  1个结束*/
+			transition: all 2s
+			}
+			/*这个是让 .box1里面的span标签发生变化*/
+			.box1:hover span{
+				bottom: 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="box1"><img src="1.jpg"/></div>
+			<div class="box1"><img src="2.jpg"/><span></span></div>
+			<div class="box1"><img src="3.jpg"/><span></span></div>
+			<div class="box1"><img src="4.jpg"/><span></span></div>
+			<div class="box1"><img src="5.jpg"/><span></span></div>
+		</div>
+	</body>
+</html>

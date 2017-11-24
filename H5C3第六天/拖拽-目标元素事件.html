@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.one{
+				width: 100px;
+				height: 100px;
+				border: 1px solid #000000;
+				background-color: red;
+			}
+			.two{
+				position: relative;
+				width: 400px;
+				height: 400px;
+				left: 300px;
+				top: 300px;
+				border: 1px solid #000000;
+				background-color: blue;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="one" draggable="true"></div>
+		<div class="two"></div>
+		<script type="text/javascript">
+			//目标元素的拖拽事件
+			var two=document.querySelector(".two")
+			//当被拖拽元素进入目标元素时触发
+			two.ondragenter=function(){
+				console.log("来了")
+			}
+			
+			//当被拖拽元素离开目标元素时触发
+			two.ondragleave=function(){
+				console.log("走了")
+			}
+			//当目标元素停留在目标元素上时触发
+			two.ondragover=function(e){
+				//阻止拖拽事件的默认行为  必须写上参数
+				e.preventDefault()
+				console.log("over")
+			}
+			
+			//当目标元素松开鼠标时触发
+			two.ondrop=function(){
+				console.log("松开鼠标了")
+			}
+		</script>
+	</body>
+</html>

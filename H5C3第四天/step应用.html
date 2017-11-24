@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 3px;
+				height: 200px;
+				background-color: #000000;
+				margin: 100px auto;
+				/*变换旋转中心*/
+				transform-origin: center bottom;
+				/*速度线性   循环次数 无限次*/
+				animation: rot 5s steps(60) infinite ;
+			}
+			@keyframes rot{
+				0%{
+					transform: rotate(0deg);
+				}
+				100%{
+					transform: rotate(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>

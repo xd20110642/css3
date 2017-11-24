@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			form{	
+				/*只适应*/			
+				width: 100%;
+				/*最大的宽度为640px*/
+				max-width: 640px;
+				/*最小的宽度为320px*/
+				min-width: 320px;
+				margin: 0 auto;
+				font-family: "微软雅黑";
+				font-size: 20px;
+			}
+			input{
+				/*宽度可继承 高度不可继承*/
+				display: block;
+				height: 30px;
+				/*继承form的宽度  然后自适应 */
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="" method="post">
+			<fieldset id="">
+				<legend>表单属性</legend>
+				<!--placeholder占位符-->
+				<!--autofocus自动获取焦点-->
+				<!--autocomplete自动保存记录  默认开启autocomplete="on" -->
+				<!--required 必填-->
+				<!--multiple 多选-->
+				<!--novalidate 关闭默认验证功能  只能写在action后面-->
+				<!--pattern="正则表达式"  添加验证-->
+				<label>
+					用户名:<input type="text" name="user" id="" value="" placeholder="例如" autofocus=""
+						autocomplete="on" required="required"/>
+				</label>
+				<!--给他添加验证方法1：用js获取这个标签 然后 鼠标离开的时候验证 方法2：用h5验证 pattern="" 后面写正则表达式-->
+				<lable>
+					电话:<input type="tel" name="" id="" value="" pattern="1\d{10}"/>
+				</lable>
+				<!--上传文件-->
+				<lable>
+					上传文件：<input type="file" multiple="multiple"/>
+				</lable>
+				<input type="submit" value=""/>
+			</fieldset>
+			
+		</form>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*自己版本的bug  盒子会抖动  没有处理好*/
+			*{margin: 0;
+			padding: 0;}
+			.wrap{
+				width:1100px;
+				height: 200px;
+				margin: 100px auto;
+				overflow: hidden;
+				box-sizing: border-box;
+			}
+			.wrap .box1,.box2,.box3 {
+				float: left;
+				margin: 5px ;
+				padding: 1px;
+				box-sizing: border-box;
+			}
+			.box2:hover{				
+				border: 2px solid #CCCCCC;				
+			}
+			
+			.box1:hover{			
+				border: 2px solid #CCCCCC;				
+			}
+			
+			.box3:hover{
+				border: 2px solid #CCCCCC;				
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="box1">
+				<img src="images/1.jpg"/>
+			</div>
+			<div class="box2">
+				<img src="images/2.jpg"/>
+			</div>
+			<div class="box3">
+				<img src="images/3.jpg"/>
+			</div>
+		</div>
+	</body>
+</html>

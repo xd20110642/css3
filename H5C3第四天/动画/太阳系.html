@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				background-color: #000000;
+				overflow: hidden;
+			}
+			.sun{
+				width: 150px;
+				height: 150px;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				/*这个是向左 向上*/
+				transform: translate(-50%,-50%);
+				background-color: yellow;
+				/*这个是设置盒子的阴影*/
+				/*阴影的水平位置 垂直位置 模糊程度  阴影尺寸*/
+				box-shadow: 0 0 30px 3px gold;
+				border-radius: 50%;
+			}
+			/*这里是模拟轨道*/
+			.earth{
+				width: 350px;
+				height: 350px;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				/*这个是向左 向上*/
+				/*保证居中*/
+				transform: translate(-50%,-50%);
+				border: 1px solid #ccc;				
+				border-radius: 50%;
+				animation: move 5s  infinite linear;
+			}
+			/*这里是创建地球 利用伪元素来创建的*/
+			.earth::before{
+				content: "";
+				width: 40px;
+				height: 40px;				
+				position: absolute;
+				left: 0;
+				top: 50%;
+				/*这个是向左 向上*/
+				transform: translate(-50%,-50%);
+				background-color: dodgerblue;		
+				border-radius: 50%;
+			}
+			/*这里也是创建轨迹*/
+			.moon{				
+				width: 80px;
+				height: 80px;
+				position: absolute;
+				left: 0;
+				top: 50%;
+				/*这个是向左 向上*/
+				transform: translate(-50%,-50%);
+				/*border: 1px solid #ccc;*/				
+				border-radius: 50%;	
+				animation: move 8s  infinite linear;	
+			}
+			/*这里是创建月球 利用伪元素来创建的*/
+			.moon::before{
+				content: "";
+				width: 10px;
+				height: 10px;				
+				position: absolute;
+				left: 0;
+				top: 50%;
+				/*这个是向左 向上*/
+				transform: translate(-50%,-50%) ;
+				background-color: white;		
+				border-radius: 50%;
+			}
+			/*这里是模拟轨道*/
+			.venus{
+				width: 500px;
+				height: 500px;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				/*这个是向左 向上*/
+				transform: translate(-50%,-50%);
+				border: 1px solid #ccc;				
+				border-radius: 50%;
+				animation: move 6s  infinite linear;
+			}
+			.venus::before{
+				content: "";
+				width: 30px;
+				height: 30px;				
+				position: absolute;
+				left: 0;
+				top: 50%;
+				/*这个是向左 向上*/
+				transform: translate(-50%,-50%);
+				background-color: red;		
+				border-radius: 50%;
+			}
+			/*这里是模拟轨道*/
+			.mars{
+				width: 600px;
+				height: 600px;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				/*这个是向左 向上*/
+				transform: translate(-50%,-50%);
+				border: 1px solid #ccc;				
+				border-radius: 50%;
+				animation: move 10s  infinite linear;
+			}
+			.mars::before{
+				content: "";
+				width: 50px;
+				height: 50px;				
+				position: absolute;
+				left: 0;
+				top: 50%;
+				/*这个是向左 向上*/
+				transform: translate(-50%,-50%);
+				background-color: pink;		
+				border-radius: 50%;
+			}
+			@keyframes move{
+				from{
+					transform: translate(-50%,-50%) rotate(0deg);
+				}
+				to{
+					/*这个是保持系统的默认原点*/
+					transform: translate(-50%,-50%) rotate(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="sun"></div>
+		<div class="earth">
+			<div class="moon"></div>
+		</div>
+		<div class="venus"></div>
+		<div class="mars"></div>
+	</body>
+</html>

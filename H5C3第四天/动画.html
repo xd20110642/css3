@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 200px;
+				height: 200px;
+				margin: 100px;
+				background-color: green;
+				/*调用动画*/
+				/*infinite 无限次*/
+				/*alternate 返回*/
+				/*animation:动画名称 持续时间  执行次数  是否反向 运动曲线  延迟执行*/
+				/*animation: move 2s 3 alternate linear;*/
+				animation: gun 2s;
+			}
+			/*css3中的动画如何使用
+			 *类似js中的函数
+			 * 先定义再调用
+			 * 
+			 * js定义函数
+			 * function fn(){函数体}
+			 * 调用fn()
+			 * 
+			 * css3中的动画
+			 * 定义动画：
+			 * 	@keyframes 动画名{
+			 * 	from{}  开始的时候
+			 * to{}     结束的时候
+			 * 				}
+			 * 
+			 * 调用的格式
+			 * animation：动画名称  持续时间
+			 * 
+			 * 
+			 * 
+			 * 
+			 * */
+			/*定义动画*/
+			/*@keyframes move{
+				/*开始状态*/
+				/*from{*/
+					/*transform: translateX(0px) rotate(0deg);*/
+				/*}*/
+				/*结束状态*/
+				/*to{
+					transform: translateX(500px) rotate(440deg);
+				}
+			}*/
+			/*定义多组动画   如果在jq中的话  就使用链式编程   animal(),animal()*/
+			@keyframes gun{
+				0%{
+					transform: translateX(0px) translateY(0px);
+					background-color: green;
+					border-radius: 0%;					
+				}
+				25%{
+					transform: translateX(500px) translateY(0px);
+					background-color: red;
+				}
+				50%{
+					transform: translateX(500px) translateY(300px);
+					border-radius: 50%;
+				}
+				75%{
+					transform: translateX(0px) translateY(300px)
+				}
+				100%{
+					transform: translateX(0px) translateY(0px);
+					background-color: red;
+					border-radius: 0%;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">			
+		</div>
+	</body>
+</html>

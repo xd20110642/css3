@@ -1,0 +1,7 @@
+#这个是必须写的开头
+CACHE MANIFEST
+
+#注释以#开头
+#下面是要缓存的文件
+CAHE:
+	http://img1.3lian.com/2015/w7/98/d/22.jpg;

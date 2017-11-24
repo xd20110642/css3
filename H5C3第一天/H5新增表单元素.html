@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			form{	
+				/*只适应*/			
+				width: 100%;
+				/*最大的宽度为640px*/
+				max-width: 640px;
+				/*最小的宽度为320px*/
+				min-width: 320px;
+				margin: 0 auto;
+				font-family: "微软雅黑";
+				font-size: 20px;
+			}
+			input{
+				/*宽度可继承 高度不可继承*/
+				display: block;
+				height: 30px;
+				/*继承form的宽度  然后自适应 */
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<form accesskey="">
+			<fieldset id="">
+				<legend>表单元素</legend>
+				
+				<lable>
+					用户名：<input type="text" name="" id="" value="" />
+				</lable>
+				
+				
+				<lable>
+					密码：<input type="password" name="" id="" value="" />
+				</lable>
+				
+				<lable>
+					性别：<input type="text" name="" id="" value="" list="sex" />
+					</lable>
+				
+				<!--定义数据列表-->
+				<datalist id="sex">
+					<option >男</option>
+					<option >女</option>
+				</datalist>
+				
+				<lable>
+					推荐人：<output>春哥</output>
+				</lable>
+				<br />
+				<lable>
+					加密类型：<keygen/>
+				</lable>
+				<br />
+				<lable>
+					度量器：<meter value="80" max="100" min="0" low="30" height="100"></meter>
+				</lable>
+				
+				<br />
+				<!--进度条-->
+				<lable>
+					进度条：<progress value="100" max="100" min="0"></progress>
+				</lable>
+				
+				
+				<input type="submit" value="提交"/>
+			</fieldset>			
+		</form>
+	</body>
+</html>

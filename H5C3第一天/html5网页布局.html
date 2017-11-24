@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			header{
+				width: 1000px;
+				height: 120px;
+				background-color:pink ;
+				margin: 0 auto;
+			}
+			nav{
+				width: 1000px;
+				height: 60px;
+				background-color:#daa520 ;
+				margin: 0 auto;
+			}
+			section{
+				width: 1000px;
+				height: 400px;
+				background-color:#ccc ;
+				margin: 0 auto;
+			}
+			section left{
+				float: left;
+				height: 400px;
+				width: 400px;
+				background-color: red;
+			}
+			section right{
+				float: right;
+				height: 400px;
+				width: 600px;
+				background-color: green;	
+			}
+			footer{
+				width: 1000px;
+				height: 90px;
+				background-color:black ;
+				margin: 0 auto;
+			}
+		</style>
+		<!--解决办法：引入html5shiv.js文件-->
+		<!--[if lte ie 8]-->	
+		<!--条件注释 只能ie识别-->
+		<script src="js/html5shiv.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--![endif]-->
+	</head>
+	<body>
+		<!--注意：ie8一下的浏览器不支持h5的标签-->
+		<!--解决办法：引入html5shiv.js文件-->
+		<!--新增的h5有语义的标签  有语义的div-->
+		<!--header ==div class header-->
+		<header>header</header>
+		<nav>nav</nav>
+		<section>
+			<left>侧边栏</left>
+			<right>文章</right>
+		</section>
+		<footer>底部</footer>
+	</body>
+</html>

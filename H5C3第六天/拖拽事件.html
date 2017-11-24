@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 200px;
+				height: 200px;
+				background-color: green;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box" draggable="true">
+			
+		</div>
+		<script type="text/javascript">
+			//目标盒子
+			var box=document.querySelector(".box")
+			//绑定拖拽事件
+			//拖拽开始事件
+			box.ondragstart=function(){
+				console.log("拖拽开始事件")
+			}
+			//拖拽结束事件
+			box.ondragend=function(){
+				console.log("拖拽结束事件")
+			}
+			
+			//拖拽离开事件  鼠标离开被拖拽的元素时触发
+			box.ondragleave=function(){
+				console.log("拖拽离开事件")
+			}
+			//拖拽过程中调用
+			box.ondrag=function(){
+				console.log("拖拽过程事件")
+			}
+		</script>
+	</body>
+</html>

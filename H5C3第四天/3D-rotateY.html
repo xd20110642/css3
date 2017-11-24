@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.rotateY{
+				width: 300px;
+				height: 226px;
+				margin: 200px auto;				
+				perspective: 200px;
+			}
+			img{
+				transition: all 1s;
+			}
+			.rotateY:hover img{
+				transform: rotateY(360deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="rotateY">
+			<img src="img/y.jpg"/>
+		</div>
+	</body>
+</html>

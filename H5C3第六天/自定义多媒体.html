@@ -1,0 +1,220 @@
+ <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--引入字体图标的文件-->
+		<link rel="stylesheet" type="text/css" href="video/css/font-awesome-ie7.css"/>
+		<link rel="stylesheet" type="text/css" href="video/css/font-awesome.css"/>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			 figcaption{
+			 	text-align: center;
+			 	line-height: 150px;
+			 	font-family: "微软雅黑";
+			 	font-size: 24px;
+			 }
+			 .player{
+			 	width: 720px;
+			 	height: 360px;
+			 	margin: 10px auto;
+			 	background-color: #000;
+			 	/*text-align: center;*/
+			 position: relative;
+			 border-radius: 20px;
+			 }
+			 .player video{
+			 	height: 100%;
+			 	display: block;
+			 	margin: 0 auto;
+			 	
+			 }
+			 /*控制条*/
+			.controls{
+				width: 700px;
+				height: 40px;
+				background-color: rgba(255,255,0,0.3);
+				position: absolute;
+				bottom: 10px;
+				left: 10px;
+				border-radius: 10px;
+			}
+			/*这个是开关定位*/
+			.switch{
+				position: absolute;
+				width:20px;
+				height: 20px;
+				/*background-color: red;*/
+				left: 10px;
+				top: 10px;
+				text-align: center;
+				line-height: 20px;
+				color: yellow;
+			}
+			/*进度条继续定位*/
+			.progress{
+				width: 433px;
+				height: 10px;
+				position: absolute;
+				background-color: rgba(255,225,255,0.4);
+				left: 40px;
+				top: 15px;
+				border-radius: 10px;
+				overflow: hidden;
+			}
+			/*当前进度条*/
+			.curr-progress{
+				width: 0%;
+				height: 10px;			
+				background-color: yellow;				
+			}
+			/*时间*/
+			.time{
+				/*background-color: red;*/
+				width: 120px;
+				height: 20px;
+				text-align: center;
+				line-height: 20px;
+				color: #fff;
+				position: absolute;
+				left: 490px;
+				top: 10px;
+				font-size: 12px;
+			}
+			/*全屏*/
+			.extend{
+				position: absolute;
+				width:20px;
+				height: 20px;
+				/*background-color: red;*/
+				right: 10px;
+				top: 10px;
+				text-align: center;
+				line-height: 20px;
+				color: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<!--多媒体-->
+		<figure>
+		<!--多媒体标题-->
+		<figcaption>视频案例</figcaption>
+		<div class="player">
+			<video src="video/fun.mp4"></video>
+		<!--这个是自定义的控制条好定位-->
+		<div class="controls">
+		<!--控制条-->
+		<!--播放暂停-->
+		<a href="#" class="switch icon-play"></a>
+	
+		
+		<div class="progress">
+			<!--当前进度条-->
+			<div class="curr-progress"></div>
+			
+		</div>
+		<!--时间-->
+		<div class="time">
+			<span class="curr-time">00:00:00/</span><span class="total">00:00:00</span>	
+			
+		</div>
+		<!--全屏-->
+		<a href="#" class="extend icon-resize-full"></a>
+			</div>
+			</div>
+		</figure>
+		
+		
+		<!--js-->
+		<script type="text/javascript">
+			//思路：
+			/*
+			 *1.点击按钮 实现播放暂停并且切换图标
+			 * 2.算出视频的总时间显示出来
+			 * 3.当视频播放的时候，进度条同步 当前时间同步
+			 	4.点击实现全屏
+			 * */
+				//获取所有标签
+				var video=document.querySelector("video");
+				//播放暂停按钮
+				var playBtn=document.querySelector(".switch");
+				//获取进度条
+				var currProgress=document.querySelector(".curr-progress");
+				//获取当前时间
+				var currTime=document.querySelector(".curr-time")
+				//获取总时间
+				var total=document.querySelector(".total")
+				//全屏
+				var exted=document.querySelector(".extend");
+				//定义总时间
+				var Ttime=0;
+				//定义当前时间
+				var cTime=0;
+			//1.点击按钮 实现播放暂停并且切换图标
+			playBtn.onclick=function(){
+				//如果视频播放就暂停 如果暂停就播放
+				//paused 这个是被选中的
+				if(video.paused){
+					//播放  图标就应该显示为暂停  
+					video.play();
+					//移除播放的图标 增加暂停
+					this.classList.remove("icon-play");
+					this.classList.add("icon-pause");
+				}
+				else{
+					//暂停  图标就应该为播放
+					video.pause();
+					this.classList.remove("icon-pause");
+					this.classList.add("icon-play");
+				}
+			}
+				//2.算出视频的总时间显示出来
+				//当视频加载完成后的事件  视频能播放的时候
+				video.oncanplay=function(){
+					//获取视频总时长 以秒为单位
+					Ttime=video.duration;
+					//将总秒数转换成时钟秒先转化为小时
+					//向下取整
+					var h=Math.floor(Ttime/3600);
+					//取分钟
+					var m=Math.floor(Ttime%3600/60);
+					//取秒
+					var s=Math.floor(Ttime%60);
+					//处理数据格式 把数据格式转换为00：00：00
+					h=h>=10?h:"0"+h;
+					m=m>=10?m:"0"+m;
+					s=s>=10?h:"0"+s;
+					//显示出来
+					total.innerHTML=h+":"+m+":"+s;
+				}				
+//				当视频播放的时候，进度条同步 当前时间同步
+						//当目前的播放位置已更改时 的事件
+						video.ontimeupdate=function(){
+							//获取视频当前的播放时间
+							//设置或返回音频/视频中的当前播放位置（以秒计）
+						 cTime=video.currentTime;
+						//把格式转换成00：00：00
+					var h=Math.floor(cTime/3600);
+					//取分钟
+					var m=Math.floor(cTime%3600/60);
+					//取秒
+					var s=Math.floor(cTime%60);
+					//处理数据格式 把数据格式转换为00：00：00
+					h=h>=10?h:"0"+h;
+					m=m>=10?m:"0"+m;
+					s=s>=10?h:"0"+s;				
+					//显示出来
+					currTime.innerHTML=h+":"+m+":"+s+"/";
+					//改变进度条的宽度： 当前时间/总时间
+						var value= cTime/Ttime;
+						currProgress.style.width=value*100+"%";
+						}
+						//点击实现全屏
+						exted.onclick=function(){
+							//全屏的h5代码  私有化前缀RequestFullScreen()
+							video.webkitRequestFullScreen();
+						}
+		</script>
+	</body>
+</html>

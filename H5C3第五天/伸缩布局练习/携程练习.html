@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style type="text/css">
+			*{margin: 0;
+			padding: 0;
+			list-style: none;}
+			a{
+				text-decoration: none;
+				color: #333;
+			}
+			img{
+				display: block;
+				width: 100%;
+				/*高度自适应*/
+				/*height:auto*/	
+			}
+			/*导航模块*/			
+			.nav .item{		
+				display: flex;		
+				height: 90px;	
+				background-color: deeppink;	
+				margin: 10px;
+				border-radius: 15px;
+			}
+			.nav .item:nth-child(2){
+				background-color: mediumseagreen;
+			}
+			.nav .item:nth-child(3){
+				background-color: #daa520;
+			}
+			.item .pub{
+				flex: 1;
+				border-right: 1px solid #fff;
+				border-bottom: 1px solid #fff;
+			}
+			.item .sub{
+				flex: 2;
+			}
+			
+			.item .sub a{
+				width:50%;
+				float: left;
+				text-align: center;
+				line-height: 45px;
+				border-right: 1px solid #fff;
+				border-bottom: 1px solid #fff;
+				/*采用盒子的内检模式*/
+				box-sizing: border-box;
+			}
+			.other{
+				display: flex;
+			}
+			.other a{
+				flex: 1;
+			}
+			/*一定是给父盒子的display:flew*/
+			.f-nav{
+				display: flex;
+				border-top: 1px solid #333;
+				border-bottom: 1px solid #333;
+			}
+			.f-nav li{
+				flex: 1;
+				text-align: center;
+				line-height: 50px;
+			}
+			.footer p{
+				text-align: center;
+				font-size: 36px;
+				color: #999;
+				line-height: 60px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<!--图片-->
+			<div class="banner">
+				<a href=""><img src="images/banner.jpg"/></a>
+			</div>
+			<!--导航-->
+			<div class="nav">
+				<div class="item">
+					<div class="pub"></div>
+					<div class="sub">
+						<a href="">海外酒店</a>
+						<a href="">团购</a>
+						<a href="">特惠酒店</a>
+						<a href="">客栈公寓</a>						
+					</div>
+				</div>
+				<div class="item">
+					<div class="pub"></div>
+					<div class="sub">
+						<a href="">海外酒店</a>
+						<a href="">团购</a>
+						<a href="">特惠酒店</a>
+						<a href="">客栈公寓</a>						
+					</div>
+				</div>
+				<div class="item">
+					<div class="pub"></div>
+					<div class="sub">
+						<a href="">海外酒店</a>
+						<a href="">团购</a>
+						<a href="">特惠酒店</a>
+						<a href="">客栈公寓</a>						
+					</div>
+				</div>
+			</div>
+			<!--其他的图片-->
+			<div class="other">
+				<a href=""><img src="images/extra_1.png"/></a>
+				<a href=""><img src="images/extra_2.png"/></a>
+			</div>
+			<!--脚步-->
+			<div class="footer">
+				<ul class="f-nav">
+					<li>客户端</li>
+					<li>关于</li>
+					<li>联系我们</li>
+				</ul>
+				<p>网站地图|e|电脑版</p>
+				<p>@2015携程</p>
+			</div>
+		</div>
+	</body>
+</html>

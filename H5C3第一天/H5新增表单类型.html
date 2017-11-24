@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			form{	
+				/*只适应*/			
+				width: 100%;
+				/*最大的宽度为640px*/
+				max-width: 640px;
+				/*最小的宽度为320px*/
+				min-width: 320px;
+				margin: 0 auto;
+				font-family: "微软雅黑";
+				font-size: 20px;
+			}
+			input{
+				/*宽度可继承 高度不可继承*/
+				display: block;
+				height: 30px;
+				/*继承form的宽度  然后自适应 */
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<!--表单要放在 表单域里 即 form里面-->
+		<form action="" method="post">
+			<!--这个是将在fieldset的包合起来-->
+			<fieldset id="">
+				<!--这个是fieldset的标题-->
+				<legend>表单属性</legend>	
+				<!--这个是电子邮箱的属性-->
+				<!--只能输入邮箱属性-->
+				<label for="">
+				email:<input type="email" name="email" id="" value="" />
+				</label>
+				<!--这个是地址验证-->
+				<label for="">
+				url:<input type="url" name="url" id="" value="" />
+				</label>
+				<!--这个是只能输入数字  step是步长  也就是点击向上跳动的是步长的倍数-->
+				<label for="">
+				number:<input type="number" name="number" id="" value=""  step="3"/>
+				</label>
+				<!--这个是电话-->
+				<label for="">
+				tel:<input type="tel" name="tel" id="" value="" />
+				</label>
+				<!--这个是搜索框-->
+				<label for="">
+				search:<input type="search" name="search" id="" value="" />
+				</label>
+				<!--这个是滑动条     如果要让滑动条在最左value为0  最右边value为1-->
+				<label for="">
+				range:<input type="range" name="range" id="" value=0   />
+				</label>
+				<!--取色器-->
+				<label for="">
+				color:<input type="color" name="range" id="" value=0 />
+				</label>
+				<!--这个是时间-->
+				<label for="">
+				time:<input type="time" name="time" id="" value=0 />
+				</label>
+			</fieldset>			
+			<!--这个submit 按钮是提交按钮-->
+			<input type="submit" value="提交"/>
+		</form>
+	</body>
+</html>

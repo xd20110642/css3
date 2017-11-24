@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--自定义属性 必须用date-开头 -->
+		<div class="box" data-name = "zs" data-cont="我是一个div" >
+		</div>
+	</body>
+	<script type="text/javascript">
+		var box=document.querySelector(".box");
+		//js里面的自定义属性
+		//box.index=100;
+		//console.log(box.className);
+		//如何获取标签的自定义属性
+		// 自定义的属性：需要通过dateset[]方式来获取
+//		console.log(box.dateset["myname"]);	
+		console.log(box.dataset['cont']);
+		console.log(box.dataset["name"])
+		//设置自定义属性的值
+//		box.dataset[myName]=30;
+	</script>
+</html>

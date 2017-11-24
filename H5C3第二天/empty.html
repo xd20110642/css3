@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*
+			 * empty:空的
+			 * 
+			 * 
+			 */
+			div{
+				width: 300px;
+				height: 100px;
+				border: 1px solid #000;
+				margin-top: 20px;
+			}
+			/*如果div是空的则会被选中   也就是说没有任何类容*/
+			div:empty{
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div>
+			<span>span</span>
+		</div>
+	</body>
+</html>

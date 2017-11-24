@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;
+			padding: 0;
+			list-style: none;}
+			section{
+				width: 1000px;
+				margin: 0 auto;
+			}
+			body{
+				background-color: #eee;
+				font-family: "微软雅黑";
+				font-size: 22px;
+			}
+			ul{
+				background-color: #fff;
+				border: 1px solid #CCCCCC;
+				margin: 40px 0;
+				
+			}
+			ul li{
+				width: 200px;
+				height: 200px;
+				margin: 10px ;
+				background-color: pink;
+				/*和下面的等效*/
+				/*float: left;*/
+			}
+			
+			/*这个是给li的父盒子 ul 清除浮动*/
+			section:nth-child(1) ul{
+				overflow: hidden;
+			}
+			/*这个是选择在第一个section下面的ul li*/
+			section:nth-child(1) ul li{
+				float: left;
+			}
+			/*设置伸缩盒子*/
+			section:nth-child(2) ul {
+				display: flex;
+			}
+			
+			section:nth-child(3) ul {
+				/*设置伸缩布局*/
+				display: flex;
+				/*设置主轴方向*/
+				flex-direction: row;
+			}
+			
+			section:nth-child(4) ul {
+				/*设置伸缩布局*/
+				display: flex;
+				/*设置主轴方向  翻转方向*/
+				flex-direction: row-reverse;
+			}
+			
+			section:nth-child(5) ul {
+				/*设置伸缩布局*/
+				display: flex;
+				/*设置主轴方向  垂直效果*/
+				flex-direction: column;
+			}
+			
+				section:nth-child(6) ul {
+				/*设置伸缩布局*/
+				display: flex;
+				/*设置主轴方向 从下往上*/
+				flex-direction:column-reverse;
+			}
+		</style>
+	</head>
+	<body>
+		<section>
+			<h3>传统布局</h3>
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</section>
+		
+		<section>
+			<h3>伸缩布局 display:flex</h3>
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</section>
+		
+		<section>
+			<h3>主轴方向 flex-direction:row</h3>
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</section>
+		
+		<section>
+			<h3>主轴方向 flex-direction:reverse-row</h3>
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</section>
+		
+		<section>
+			<h3>主轴方向 flex-direction:column</h3>
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</section>
+		
+		<section>
+			<h3>主轴方向 flex-direction:reverse-column</h3>
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+			</ul>
+		</section>
+	</body>
+</html>

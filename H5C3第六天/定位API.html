@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//navigator导航
+			//geolocation定位
+//			window.navigator.geolocation
+			//兼容处理
+			if(navigator.geolocation){
+				//如果支持，获取用户的地理信息
+				//SuccessCallback 当获取用户位置成功的回调函数
+				//errorCallback  当获取用户位置失败的回调函数
+			navigator.geolocation.getCurrentPosition(SuccessCallback,errorCallback);
+			 //获取地理位置成功的回调函数
+			 function SuccessCallback(position){
+			 //获取用户当前的经纬度
+			 var wd=position.coords.latitude;
+			 var jd=position.coords.longitude;
+			 console.log(wd+"--------"+jd)
+			 console.log("获取用户位置成功")
+			 }
+			//获取地理位置失败的回调函数
+			function errorCallback(error){
+				console.log(error)
+			 	console.log("获取用户位置失败")
+			 }
+			
+			}
+			else{
+				console.log("sorry,你的浏览器不支持地理定位")
+			}
+//		if (navigator.geolocation) {
+//		    console.log("h5 定位中");
+//		    navigator.geolocation.getCurrentPosition(function(position) {
+//		        var latitude  = position.coords.latitude;
+//		        var longitude = position.coords.longitude;
+//		        console.log('h5定位成功；'); 
+//		    }, function(error) {
+//		        console.log('h5定失败；'); 
+//		    })
+//		}
+		</script>
+	</body>
+</html>

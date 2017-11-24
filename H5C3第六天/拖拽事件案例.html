@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			.one{
+				width: 400px;
+				height: 400px;
+				border: 1px solid #000000;
+				
+			}
+			.one>span,.two>span{
+				display: block;
+				float: left;
+				width: 98px;
+				height: 98px;
+				border: 1px solid #000000;
+				border-radius: 50%;
+				background-color: red;
+				text-align: center;
+				line-height: 98px;
+				margin: -1px;
+			}
+			.two{
+				position: relative;
+				width: 400px;
+				height: 400px;
+				left: 50%;
+				top: 50%;
+				border: 1px solid #000000;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="one">
+			<span draggable="true">1</span>
+			<span draggable="true">2</span>
+			<span draggable="true">3</span>
+			<span draggable="true">4</span>
+			<span draggable="true">5</span>
+			<span draggable="true">6</span>
+			<span draggable="true">7</span>
+			<span draggable="true">8</span>
+		</div>
+		<div class="two"></div>
+		
+		<script type="text/javascript">
+			var spanAll=document.querySelectorAll("span")
+			var two=document.querySelectorAll(".two")
+			
+		//临时的盒子 用来存放当前拖拽的元素
+			var temp=null;
+			//给8个小盒子分别绑定拖拽事件
+			for(var i=0;i<spanAll.length;i++){
+				//绑定开始事件
+				spanAll[i].ondragstart=function(){
+					//保持当前拖拽的元素
+					temp=this;		
+				}
+				//绑定结束的事件  
+				spanAll[i].ondragstart=function(){
+					//清空当前拖拽的元素
+					temp=null;	
+			
+					console.log(temp)
+				}
+			}
+			
+			//目标元素的拖拽事件 停留在上面持续触发
+			//先要消去默认属性
+			two.ondragover=function(e){
+				//阻止默认的拖拽行为
+				e.preventDefault();
+			}
+			//当在目标元素上松开鼠标 触发
+			two.ondrop=function(){
+				this.appendChild(temp);
+//				console.log(temp)
+			}
+		</script>
+	</body>
+</html>

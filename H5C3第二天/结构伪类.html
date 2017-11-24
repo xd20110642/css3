@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*
+			 * 符号：冒号
+			 * 结构伪类：通过结构来进行筛选
+			 */
+			*{
+				margin: 0;
+				padding: 0;
+				list-style:none;
+			}
+			ul{
+				width: 520px;
+				/*根据内容自动撑开*/
+				height: auto;
+				margin: 100px auto;
+			}
+			li{
+				float: left;
+				width: 70px;
+				height: 70px;
+				border: 1px solid #ccc;
+				text-align: center;
+				line-height: 70px;
+				margin-left: -1px;
+				margin-top: -1px;
+			}
+			/*这个是找比自己大一级的父盒子  然后按照顺序选择符合条件的东西 不会跳过 */
+			/*这个的意思是下列li中的第一个li*/
+			/*先找父元素 里面指定的那个标签*/
+			/*选中li里面的第一个li*/
+			/*直接以全部内容排序  包括符合和不符合的排序  所以他的序号要根据实际情况增减*/
+		/* 	li:first-child{
+				background-color: pink;
+			}
+			选中最后一个
+			li:last-child{
+				background-color: pink;
+			}
+			选中指定的标签
+			li:nth-child(5){
+				background-color: pink;				
+			}
+			直接以符合条件的li排序
+			li:nth-of-type(1){
+				background-color: pink;		
+			} */
+			/*选择奇数*/
+			/*li:nth-child(odd){
+				background-color: yellow;	
+			}*/
+			/*选择偶数*/
+			/*li:nth-child(even){
+				background-color: pink	
+			}*/
+			/*n表示0，1，2，3.。。。。。。。。。
+			 	当n小于1是无效的
+			 * 
+			 * */
+			
+			/*/*选择偶数*/
+			/*li:nth-child(2n){
+				background-color: red	
+			}
+			/*选择奇数*/
+			/*li:nth-child(2+1){
+				background-color: #CCCCCC;	
+			}*/
+			
+			/*选中前5个*/
+			li:nth-child(-n+5){
+				background-color: #CCCCCC;
+			}
+			
+			/*选中后5个*/
+			li:nth-last-child(-n+5){
+				background-color: #CCCCCC;
+			}
+</style>
+	</head>
+	<body>
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+			<li>11</li>
+			<li>12</li>
+			<li>13</li>
+			<li>14</li>
+			<li>15</li>
+			<li>16</li>
+			<li>17</li>
+			<li>18</li>
+			<li>19</li>
+			<li>20</li>
+			<li>21</li>
+			<li>22</li>
+			<li>23</li>
+			<li>24</li>
+			<li>25</li>
+			<li>26</li>
+			<li>27</li>
+			<li>28</li>
+			<li>29</li>
+			<li>30</li>
+			<li>31</li>
+			<li>32</li>
+			<li>33</li>
+			<li>34</li>
+			<li>35</li>
+		</ul>
+	</body>
+</html>

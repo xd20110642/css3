@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 200px;
+				height: 200px;
+				margin: 100px;
+				background-color: green;
+				/*animation: move 2s 3 alternate linear;*/
+				/*animation 属性详解*/
+				/*动画名称*/
+				animation-name: move;
+				/*一次动画持续时间   前面2个属性必须拥有* /*/
+				animation-duration: 2s;
+				/*动画执行次数   无数次infinite*/
+				animation-iteration-count: 3;
+				/*动画的方向    normal正常 alternate反向*/
+				animation-direction: alternate;
+				/*动画延迟执行*/
+				animation-delay: 1s;
+				/*设置动画结束后盒子的状态  forwards保持动画结束后的状态*/
+				/*backwards保持动画开始前的状态*/
+				animation-fill-mode:forwards ;
+				/*运动曲线    steps()分步执行*/
+				animation-timing-function: steps(3);
+			}
+			@keyframes move{
+				0%{
+					
+				}
+				100%{
+					transform: translateX(500px) rotate(555deg);
+				}
+			}
+</style>
+	</head>
+	<body>
+		<div class="box"></div>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 250px;
+				height: 250px;
+				background-color: green;
+				margin: 100px auto;
+				border-radius: 50%;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div class="box"></div>
+		
+		<script type="text/javascript">
+			var box=document.querySelector(".box")
+			box.onclick=function(){
+				//全屏效果  
+//				box.webkitRequestFullScreen();
+				//兼容写法
+				if(box.requestFullscreen){
+					box.requestFullscreen()
+				}else if(box.webkitRequestFullScreen)
+				{
+					box.webkitRequestFullScreen();
+				}else if(box.mozRequestFullScreen){
+					box.mozRequestFullScreen()
+				}
+			
+			
+			}
+		</script>
+	</body>
+</html>
